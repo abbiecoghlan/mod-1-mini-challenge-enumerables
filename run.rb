@@ -31,11 +31,14 @@ end
 
 # BONUS Deliverables
 def print_spiciest_foods(spicy_foods)
-
+  spiciest_foods(spicy_foods).each do |item_hash|
+    puts "#{item_hash[:name]} (#{item_hash[:cuisine]}) | Heat Level: " + "\u{1F336}"*item_hash[:heat_level]   
+  end
 end
 
 def average_heat_level(spicy_foods)
-
+  heat_array = spicy_foods.collect {|item_hash| item_hash[:heat_level]}
+  heat_array.sum / heat_array.length
 end
 
 
